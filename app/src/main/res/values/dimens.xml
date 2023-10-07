@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_year_card">100dp</dimen>
+    <dimen name="card_corner_default">25dp</dimen>
+    <dimen name="card_spec_margin">20dp</dimen>
+</resources>
