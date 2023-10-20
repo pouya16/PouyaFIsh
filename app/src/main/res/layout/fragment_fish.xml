@@ -2,13 +2,1324 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/background"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FishFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@color/black"
+        android:clickable="true"
+        android:id="@+id/card_back"
+        app:cardCornerRadius="@dimen/card_corner_default"
+        android:layout_marginTop="-25dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="25dp"
+            android:layout_gravity="center_vertical"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_arrow_right_white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تیرماه ۱۴۰۲"
+                android:textColor="@color/white"
+                android:layout_marginRight="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:textSize="17sp"
+                android:id="@+id/txt_month"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_karkard"
+            app:cardCornerRadius="@dimen/card_corner_default"
+            android:layout_margin="@dimen/margin_cards_salary"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_cards_salary_top"
+                    android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                    android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                    android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                    android:layoutDirection="rtl">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/karkard"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="141.552.12"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:layout_marginLeft="@dimen/margin_number_to_expand"
+                        android:id="@+id/txt_karkard_sum"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/img_expand"
+                        android:src="@drawable/ic_arrow_down_black"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                    android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                    android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                    android:id="@+id/layout_karkard_detail">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/route_name"
+                            android:layout_weight="3"
+                            android:id="@+id/txt_route_name"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/normal"
+                            android:gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:id="@+id/txt_road_normal"
+                            android:textColor="@color/black"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/vacation"
+                            android:gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:id="@+id/txt_road_vacation"
+                            android:textColor="@color/black"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/price"
+                            android:gravity="left"
+                            android:layout_weight="2"
+                            android:id="@+id/txt_price"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="4"
+                        android:id="@+id/recycler_karkard"
+                        tools:listitem="@layout/recycler_work_normal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_extra"
+            app:cardCornerRadius="@dimen/card_corner_default"
+            android:layout_marginLeft="@dimen/margin_cards_salary"
+            android:layout_marginRight="@dimen/margin_cards_salary"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_cards_salary_top"
+                    android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                    android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                    android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                    android:layoutDirection="rtl">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/extra_bonus"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="141.552.12"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:layout_marginLeft="@dimen/margin_number_to_expand"
+                        android:id="@+id/txt_extra_sum"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/img_expand_extra"
+                        android:src="@drawable/ic_arrow_down_black"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                    android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                    android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                    android:id="@+id/layout_extra_detail">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/route_name"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/card_moavaghe"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/moavaghe"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_moavaghe_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/layout_bonus_kasri"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bonus_kosur"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_bonus_kosur_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/layout_extra_time"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/extra_time"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_extra_time_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/layout_mission"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mission"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_mission_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="2"
+                        android:id="@+id/recycler_extra"
+                        tools:listitem="@layout/recycler_payment"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/layout_dispatch"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dispatch"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_dispatch_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/layout_prev_month"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/prev_month"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_prev_month_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/layout_bonus"
+                        android:layout_marginTop="@dimen/cards_item_top"
+                        android:layoutDirection="rtl">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bonus"
+                            android:textColor="@color/black"/>
+
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="@dimen/margin_dot_top"
+                            android:layout_marginRight="@dimen/margin_dot"
+                            android:layout_marginLeft="@dimen/margin_dot"
+                            android:src="@drawable/dotted"
+                            android:layout_gravity="center_vertical"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11.223.42"
+                            android:id="@+id/txt_bonus_price"
+                            android:gravity="left"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_kosur"
+                android:layout_marginTop="@dimen/margin_cards_salary"
+                app:cardCornerRadius="@dimen/card_corner_default"
+                android:layout_marginLeft="@dimen/margin_cards_salary"
+                android:layout_marginRight="@dimen/margin_cards_salary"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/margin_cards_salary_top"
+                        android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                        android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                        android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                        android:layoutDirection="rtl">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kosur"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="141.552.12"
+                            android:textColor="@android:color/holo_red_dark"
+                            android:layout_marginLeft="@dimen/margin_number_to_expand"
+                            android:id="@+id/txt_kosur_sum"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/img_expand_kosur"
+                            android:src="@drawable/ic_arrow_down_black"
+                            android:layout_gravity="center_vertical"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                        android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                        android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                        android:id="@+id/layout_kosur_detail">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/header"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/price"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/card_loan_melli"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loan_melli"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_loan_melli"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/card_loan_box"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/loan_box"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_loan_box"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_taxi_bill"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/taxi_bill"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_taxi_bill"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_save"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/save_life"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_save"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_traffic_bill"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/traffic_bill"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_traffic_bill"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_operation_bill"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/operation_bill"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_operation_bill"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_firm_bedehi"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/firm_bedehi"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_firm_bedehi"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_car_ins"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/car_ins"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_car_ins"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_tamin_ins"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tamin_ins"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_tamin_ins"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_other_kosur"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/other_kosur"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_other_kosur"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/layout_ins_complete"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/ins_complete"
+                                android:textColor="@color/black"/>
+
+
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginTop="@dimen/margin_dot_top"
+                                android:layout_marginRight="@dimen/margin_dot"
+                                android:layout_marginLeft="@dimen/margin_dot"
+                                android:src="@drawable/dotted"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="11.223.42"
+                                android:id="@+id/txt_ins_complete"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_others"
+                app:cardCornerRadius="@dimen/card_corner_default"
+                android:layout_margin="@dimen/margin_cards_salary"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/margin_cards_salary_top"
+                        android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                        android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                        android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                        android:layoutDirection="rtl">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/others_service"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="141.552.12"
+                            android:visibility="invisible"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="@dimen/margin_number_to_expand"
+                            android:id="@+id/txt_others_sum"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/img_expand_others"
+                            android:src="@drawable/ic_arrow_down_black"
+                            android:layout_gravity="center_vertical"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                        android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                        android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                        android:id="@+id/layout_others_detail">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/route_name"
+                                android:layout_weight="3"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/count"
+                                android:gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"/>
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hour"
+                                android:gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"/>
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/price"
+                                android:gravity="left"
+                                android:layout_weight="2"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="4"
+                            android:id="@+id/recycler_others"
+                            tools:listitem="@layout/recycler_work_normal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_sum"
+                app:cardCornerRadius="@dimen/card_corner_default"
+                android:layout_marginLeft="@dimen/margin_cards_salary"
+                android:layout_marginRight="@dimen/margin_cards_salary"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/margin_cards_salary_top"
+                        android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                        android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                        android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                        android:layoutDirection="rtl">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sum_pure"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="141.552.12"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:layout_marginLeft="@dimen/margin_number_to_expand"
+                            android:id="@+id/txt_pure_sum"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/img_expand_sum"
+                            android:src="@drawable/ic_arrow_down_black"
+                            android:layout_gravity="center_vertical"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:layout_marginRight="@dimen/margin_cards_Salary_right"
+                        android:layout_marginLeft="@dimen/margin_cards_Salary_right"
+                        android:layout_marginBottom="@dimen/margin_cards_salary_top"
+                        android:id="@+id/layout_sum_detail">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/price"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:text="@string/account_address"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"/>
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/acount_owner"
+                                android:layout_weight="1"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/card_receive_one"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="412.323.231"
+                                android:id="@+id/txt_price_first"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"/>
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="1523544213"
+                                android:gravity="center_horizontal"
+                                android:id="@+id/txt_acount_first"
+                                android:layout_weight="2"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="خالویی"
+                                android:layout_weight="1"
+                                android:id="@+id/txt_owner_first"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/card_receive_second"
+                            android:layout_marginTop="@dimen/cards_item_top"
+                            android:layoutDirection="rtl">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="412.323.231"
+                                android:id="@+id/txt_price_second"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"/>
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="1523544213"
+                                android:gravity="center_horizontal"
+                                android:id="@+id/txt_acount_second"
+                                android:layout_weight="2"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="خالویی"
+                                android:layout_weight="1"
+                                android:id="@+id/txt_owner_second"
+                                android:gravity="left"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>
 </FrameLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/margin_recycler_work"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="سیاهبوم خیرآباد۲۹"
+        android:id="@+id/txt_route_name"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/dotted"
+        android:layout_marginTop="@dimen/margin_dot_top"
+        android:layout_marginRight="@dimen/margin_dot"
+        android:layout_marginLeft="@dimen/margin_dot"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="119.579.242"
+        android:gravity="left"
+        android:id="@+id/txt_price"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

@@ -3,4 +3,14 @@
     <dimen name="size_year_card">100dp</dimen>
     <dimen name="card_corner_default">25dp</dimen>
     <dimen name="card_spec_margin">20dp</dimen>
+    <dimen name="margin_recycler_work">12dp</dimen>
+    <dimen name="margin_cards_salary">25dp</dimen>
+    <dimen name="margin_cards_salary_top">10dp</dimen>
+    <dimen name="margin_cards_Salary_right">20dp</dimen>
+    <dimen name="margin_number_to_expand">16dp</dimen>
+    <dimen name="cards_item_top">12dp</dimen>
+    <dimen name="margin_dotts">8dp</dimen>
+    <dimen name="margin_dott">8dp</dimen>
+    <dimen name="margin_dot">8dp</dimen>
+    <dimen name="margin_dot_top">2dp</dimen>
 </resources>
