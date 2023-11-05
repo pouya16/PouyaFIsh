@@ -3,12 +3,12 @@
     android:layout_width="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="@android:color/transparent"
-    android:layout_margin="8dp"
+    android:padding="4dp"
     android:layout_height="wrap_content">
     <com.google.android.material.card.MaterialCardView
         android:layout_width="@dimen/size_year_card"
         android:layout_height="@dimen/size_year_card"
-        android:backgroundTint="@color/purple"
+        app:cardBackgroundColor="@color/purple"
         app:strokeColor="@color/black"
         android:id="@+id/main_card"
         app:strokeWidth="0dp"
@@ -16,13 +16,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="۱۴۰۲"
-                android:textSize="14sp"
                 android:layout_centerInParent="true"
-                android:textColor="@color/white"/>
+                android:text="۱۴۰۲"
+                android:id="@+id/txt_time"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 

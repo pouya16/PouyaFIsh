@@ -33,7 +33,7 @@
             app:boxCornerRadiusTopStart="15dp"
             app:boxCornerRadiusBottomStart="15dp"
             app:boxCornerRadiusBottomEnd="15dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:boxCornerRadiusTopEnd="15dp"
             android:id="@+id/box_mobile"
             app:endIconMode="clear_text"
@@ -53,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:visibility="gone"
             android:layout_marginTop="24dp"
             android:id="@+id/layout_pin">
 
@@ -69,8 +70,13 @@
                 android:layout_marginTop="18dp"
                 android:layout_gravity="center_horizontal"
                 app:viewType="line"
+                app:itemCount="4"
+                android:clickable="true"
                 app:lineColor="@color/white"
                 app:itemSpacing="20dp"
+                android:enabled="true"
+                android:inputType="number"
+                android:focusable="true"
                 android:id="@+id/pinview"/>
 
             <LinearLayout
@@ -104,19 +110,32 @@
         </LinearLayout>
     </LinearLayout>
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
+
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="@string/continue_text"
         android:layout_alignParentBottom="true"
-        android:layoutDirection="rtl"
-        android:id="@+id/btn_continue"
+        android:visibility="visible"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginBottom="-10dp"
         android:backgroundTint="@color/teal_200"
-        app:icon="@drawable/ic_array_left"
-        app:iconGravity="textEnd"
-        app:cornerRadius="0dp"
+        android:layoutDirection="rtl"
         android:padding="-10dp"
-        android:layout_margin="-10dp"/>
+        android:text="@string/continue_text"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/ic_array_left"
+        app:iconGravity="textEnd" />
 
 
 </RelativeLayout>

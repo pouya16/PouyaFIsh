@@ -50,4 +50,5 @@
     <string name="sum_pure">خالص دریافتی</string>
     <string name="account_address">شماره حساب بانکی</string>
     <string name="acount_owner">صاحب حساب</string>
+    <string name="loading">در حال دریافت اطلاعات</string>
 </resources>
